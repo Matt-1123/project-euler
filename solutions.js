@@ -16,9 +16,9 @@ function multiplesOf3and5(number) {
 function fiboEvenSum(n) {
   let fibNumbers = []; 
   if(n === 1){
-    fibNumbers = [0, 1];
+    fibNumbers = [1, 1];
   } else{
-    fibNumbers[0] = 0;
+    fibNumbers[0] = 1;
     fibNumbers[1] = 1;
     for (let i = 2; i <= n; i++) {
       // Next fibonacci number = previous + one before previous
