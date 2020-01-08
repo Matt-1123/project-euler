@@ -1,15 +1,27 @@
-// Jan 3, 2020
-// 1. 
-function multiplesOf3and5(number) {
-  let multiples = [];
-  for(let i = 0; i < number; i++){
-    if(i % 3 === 0 || i % 5 === 0){
-      multiples.push(i);
-    }
+// Wed Jan 8, 2020
+// 3. Largest prime factor
+function largestPrimeFactor(number) {
+  let primeFactors = [];
+  // add 2's to array until number no longer even
+  while (number % 2 === 0){
+    primeFactors.push(2);
+    number = number / 2;
   }
-  let sum = multiples.reduce((a,b) => a + b, 0);
-  return sum;
+  // divide number starting with 3 until sqrt of input number reached
+  let sqrtNum = Math.sqrt(number);
+  for(let i = 3; i < sqrtNum; i++){
+    while(number % i === 0){
+      primeFactors.push(i);
+      number = number / i;
+    }
+    console.log(number);
+  }
+  // exclude 1 from array list
+  if(number > 2) primeFactors.push(number);
+  // return lasgest prime factor
+  return primeFactors.pop();
 }
+
 
 // Jan 5, 2020
 // 2. 
@@ -39,3 +51,20 @@ function fiboEvenSum(n) {
 
   return evenFibSum;
 }
+
+
+// Jan 3, 2020
+// 1. 
+function multiplesOf3and5(number) {
+  let multiples = [];
+  for(let i = 0; i < number; i++){
+    if(i % 3 === 0 || i % 5 === 0){
+      multiples.push(i);
+    }
+  }
+  let sum = multiples.reduce((a,b) => a + b, 0);
+  return sum;
+}
+
+
+
