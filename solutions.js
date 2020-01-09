@@ -1,3 +1,26 @@
+// Thurs Jan 9, 2020
+// 4. Largest palindrome product
+function largestPalindromeProduct(n) {
+  let result = 0;
+  // Find largest number
+  let largestNum = '9';
+  largestNum += Number(largestNum.repeat(n - 1));
+  largestNum = Number(largestNum);
+  // Test if # is a palindrome
+  const isPalindrome = num => Number([...`${num}`].reverse().join("")) === num;
+  // Multiply largest numbers first to test for palindrome product
+  for(let i = largestNum; i > 0; i--){
+    for(let j = largestNum; j > 0; j--){
+      let mult = i * j;
+      if(isPalindrome(mult) === true && mult > result){
+        result = mult;
+      }
+    }
+  }
+  return result;
+}
+
+
 // Wed Jan 8, 2020
 // 3. Largest prime factor
 function largestPrimeFactor(number) {
