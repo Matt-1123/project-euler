@@ -1,3 +1,24 @@
+// Fri Jan 10, 2020
+// 5. Smallest multiple
+function smallestMult(n) {
+  let result = n;
+  let count = 0;
+  // Test whether multiples of n are divisible by 1 through n
+  for(let i = 1; i <= n; i++){
+    while(count < n){
+      for(let j = 1; j <= n; j++){
+        if(result % j === 0){
+          count ++;
+        } else{
+          count = 0;
+          result += n;
+        }
+      }
+    }
+    return result;
+  }
+}
+
 // Thurs Jan 9, 2020
 // 4. Largest palindrome product
 function largestPalindromeProduct(n) {
