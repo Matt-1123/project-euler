@@ -1,4 +1,20 @@
 // Fri Jan 10, 2020
+// 6. Find the difference between the sum of the squares of the first n natural numbers and the square of the sum.
+function sumSquareDifference(n) {
+  let sumOfSquares = 0;
+  for(let i = 1; i <= n; i++){
+    sumOfSquares += Math.pow(i, 2);
+  }
+  let sumOfNums = 0;
+  for(let i = 1; i <= n; i++){
+    sumOfNums += i;
+  }
+  let squareOfSums = Math.pow(sumOfNums, 2);
+  return(squareOfSums - sumOfSquares);
+}
+
+
+// Fri Jan 10, 2020
 // 5. Smallest multiple
 function smallestMult(n) {
   let result = n;
@@ -18,6 +34,7 @@ function smallestMult(n) {
     return result;
   }
 }
+
 
 // Thurs Jan 9, 2020
 // 4. Largest palindrome product
