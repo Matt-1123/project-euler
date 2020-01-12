@@ -1,3 +1,39 @@
+// Sat Jan 11, 2020
+// 7. Find the nth prime
+function nthPrime(n) {
+  function testPrime(num){
+    if (num===1){return false;}  
+    else if(num === 2){return true;}
+    else{
+      for(let i = 2; i < num; i++){
+        if(num % i === 0){
+          return false;
+        }
+      }
+      return true;  
+    }
+  }
+  
+  let primes = [];
+  let counter = 1;
+  // let count = 0;
+  // let nextPrimeTest = 2;
+  for(let i = 1; i <= n; i++){
+    if(testPrime(counter)){
+      primes.push(counter);
+    } else{
+      counter ++;
+    }
+    console.log
+  }
+  console.log(primes);
+  return primes.pop();
+}
+
+nthPrime(6);
+
+
+
 // Fri Jan 10, 2020
 // 6. Find the difference between the sum of the squares of the first n natural numbers and the square of the sum.
 function sumSquareDifference(n) {
